@@ -1,13 +1,13 @@
-package datas_lab7;
+package DataS_Lab7;
 
-import java.awt.List;
 import java.util.ArrayList;
 
 class Vertex {
     private int x;
     private int y;
-    private String id;
+    private String id; 
     private ArrayList<Vertex> adjacentVertices; // List to store adjacent vertices
+    private int size = 0;
 
     public Vertex(int x, int y, String id) {
         this.x = x;
@@ -15,7 +15,6 @@ class Vertex {
         this.id = id;
         this.adjacentVertices = new ArrayList<>();
     }
-
     // Getter methods for x, y, and id
     public int getX() {
         return x;
@@ -29,13 +28,17 @@ class Vertex {
         return id;
     }
 
+     public int getSize() {
+        return size;
+    }
+
     public void addAdjacentVertex(Vertex vertex) {
-        adjacentVertices.add(vertex); 
+        size++;
+        adjacentVertices.add(vertex);
     }
 
     // Method to get adjacent vertices
     public ArrayList<Vertex> getAdjacentVertices() {
-        System.out.println(adjacentVertices);
         return adjacentVertices;
-    }
+    }      
 }
